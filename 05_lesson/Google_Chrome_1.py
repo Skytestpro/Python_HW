@@ -4,7 +4,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from time import sleep
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+driver = webdriver.Chrome(service=ChromeService
+                          (ChromeDriverManager().install()))
 
 driver.get('https://the-internet.herokuapp.com/add_remove_elements/')
 

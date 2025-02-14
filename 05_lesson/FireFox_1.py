@@ -4,7 +4,8 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.common.by import By
 from time import sleep
 
-driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+driver = webdriver.Firefox(service=FirefoxService
+                           (GeckoDriverManager().install()))
 
 driver.get('https://the-internet.herokuapp.com/entry_ad')
 
