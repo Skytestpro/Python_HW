@@ -2,16 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from time import sleep
 
 driver = webdriver.Chrome(service=ChromeService
                           (ChromeDriverManager().install()))
+driver.implicitly_wait(18)
 
-driver.get('http://uitestingplayground.com/classattr')
+driver.get('http://uitestingplayground.com/ajax')
+driver.find_element(By.CSS_SELECTOR, '#ajaxButton').click()
 
-button = '.btn-primary'
-find_button = driver.find_element(By.CSS_SELECTOR, button)
+content = driver.find_element(By.CSS_SELECTOR, '.bg-success').text
 
-find_button.click()
-
-sleep(2)
+print(content)
