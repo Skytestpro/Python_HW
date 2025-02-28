@@ -11,7 +11,6 @@ def test_positive_create_project():
     assert len(create) == 1
     assert create['id'] != None
 
-
 @pytest.mark.negative_test  # нет авторизации
 def test_negative_create_project():
     resp = api.negative_create_project(title=fake.country())
@@ -27,7 +26,7 @@ def test_positive_change_project():
 
     # изменение
     update = api.change_project(id=result, title='Изменено')
-    id_2 = api.get_list()['content'][-1]["id"]
+    id_2 = update['id']
     assert len(update) == 1
     assert id_2 == result
 

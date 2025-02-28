@@ -10,11 +10,6 @@ class Projects:
         my_headers = {"Authorization": "здесь токен"}
         return my_headers
 
-    def get_list(self):
-        resp = requests.get(f'{self.base_url}/api-v2/projects',
-                            headers=self.authorization())
-        return resp.json()
-
     def positive_create_project(self, title='', users=None):
         users = {"2836faf7-0371-48b4-b504-23dc900eaa1d": "admin"}
         body = {
